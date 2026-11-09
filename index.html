@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy New Year 🎆</title>
+<style>
+:root{--bg:#050816;--card:#0f1530;--gold:#ffd54a;--cyan:#38e8ff;--pink:#ff3df0;--text:#f2f5ff;--muted:#9fb0e0;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px;height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans Gujarati",Roboto,sans-serif;overflow-x:hidden;min-height:100%}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.aur{position:fixed;inset:-20%;z-index:0;pointer-events:none;background:radial-gradient(40% 30% at 20% 20%,#6a1bff55,transparent),radial-gradient(40% 30% at 80% 30%,#ff3df044,transparent),radial-gradient(40% 40% at 50% 90%,#38e8ff33,transparent);animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(4%,3%) scale(1.1)}}
+main,nav,footer{position:relative;z-index:2}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;gap:6px;overflow-x:auto;padding:10px;background:rgba(5,8,22,.8);backdrop-filter:blur(10px)}
+nav a{flex:none;color:var(--cyan);text-decoration:none;padding:8px 14px;border:1px solid #38e8ff55;border-radius:20px;font-size:14px}
+section{padding:44px 16px;max-width:900px;margin:auto}
+.hero{text-align:center;padding-top:34px}
+.pill{display:inline-block;padding:6px 16px;border:1px solid #ffd54a66;border-radius:30px;color:var(--gold);font-size:14px}
+h1{font-size:clamp(40px,12vw,84px);line-height:1.05;margin:14px 0 4px;padding:6px 0;background:linear-gradient(90deg,var(--gold),var(--pink),var(--cyan),var(--gold));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 6s linear infinite}
+@keyframes flow{to{background-position:300% 0}}
+h1.mega{font-size:clamp(54px,17vw,130px);line-height:1.1;margin:22px 0 14px;filter:drop-shadow(0 0 22px #ff3df088)}
+.year{font-size:clamp(90px,30vw,190px);font-weight:900;line-height:1;margin:0;color:transparent;-webkit-text-stroke:2px var(--gold);animation:pulse 2.2s ease-in-out infinite alternate}
+@keyframes pulse{from{filter:drop-shadow(0 0 8px #ffd54a66)}to{filter:drop-shadow(0 0 34px #ff3df0aa)}}
+h2{color:var(--gold);text-align:center;font-size:28px;margin:0 0 6px}
+.sub{text-align:center;color:var(--muted);margin:0 0 20px;line-height:1.6}
+.by{margin-top:6px;color:var(--muted)}.by b{color:#fff}
+input[type=text]{width:100%;max-width:340px;padding:14px;border-radius:14px;border:2px solid var(--cyan);background:#0a1030;color:var(--text);font-size:17px;text-align:center}
+button{cursor:pointer;border:0;border-radius:14px;padding:13px 20px;font-size:16px;font-weight:700;color:#10051f;background:linear-gradient(90deg,var(--gold),var(--pink));margin:6px 4px;font-family:inherit}
+button.alt{background:#1b2350;color:var(--text);border:1px solid #38e8ff66}
+.row{text-align:center;margin-top:8px}
+.cd{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:480px;margin:auto}
+.cd div{background:linear-gradient(160deg,#1a2255,#0f1530);border:1px solid #38e8ff44;border-radius:16px;padding:18px 4px;text-align:center}
+.cd b{display:block;font-size:clamp(36px,11vw,58px);color:var(--cyan);text-shadow:0 0 18px #38e8ff99;font-variant-numeric:tabular-nums}
+.cd span{font-size:14px;color:var(--muted)}
+.bar{max-width:480px;height:10px;border-radius:10px;background:#1b2350;margin:18px auto 0;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--pink),var(--gold));transition:width 1s linear}
+canvas.fw{width:100%;display:block;touch-action:manipulation}
+#fx{height:340px;border-radius:18px;background:#02040e;border:2px solid #38e8ff55}
+.balls{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.ball{background:var(--card);border:1px solid #ff3df055;border-radius:18px;padding:22px 12px;text-align:center;cursor:pointer;min-height:130px;display:flex;flex-direction:column;justify-content:center;gap:6px;transition:.3s}
+.ball .e{font-size:42px}.ball.open{background:linear-gradient(160deg,#3a1170,#0f1530);border-color:var(--gold);transform:scale(1.03)}
+.ball small{color:var(--gold);line-height:1.4}
+.letter{background:linear-gradient(160deg,#1a1050,#0f1530);border:1px solid #ffd54a66;border-radius:20px;padding:24px 20px;line-height:1.9;font-size:18px;min-height:120px;box-shadow:0 0 40px #ff3df033;white-space:pre-wrap}
+.sky{position:relative;height:330px;border-radius:18px;overflow:hidden;background:linear-gradient(#0a0f33,#2a1060);border:2px solid #ff3df055}
+.bal{position:absolute;bottom:-70px;font-size:56px;cursor:pointer;user-select:none;animation:up linear forwards;filter:drop-shadow(0 0 10px #fff4)}
+@keyframes up{to{transform:translateY(-420px) rotate(8deg)}}
+.pops{text-align:center;color:var(--gold);margin-top:8px;font-weight:700}
+.tabs{display:flex;gap:6px;overflow-x:auto;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.tabs button{padding:9px 14px;font-size:14px}
+.tabs button.act{background:linear-gradient(90deg,var(--cyan),var(--pink));color:#fff}
+.wishes{display:grid;gap:10px}
+.wish{background:var(--card);border-left:4px solid var(--pink);padding:14px;border-radius:12px;line-height:1.7}
+.wish i{display:block;margin-top:6px;color:var(--muted);font-size:13px}
+.wish small{display:block;margin-top:8px}
+.wish button{padding:6px 12px;font-size:13px;margin:0 6px 0 0}
+#modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.8);padding:16px}
+#modal.show{display:flex}
+.box{background:linear-gradient(160deg,#2b1070,#0f1530);border:2px solid var(--gold);border-radius:22px;padding:26px 20px;max-width:420px;width:100%;text-align:center;animation:pop .5s cubic-bezier(.2,1.6,.4,1);box-shadow:0 0 60px #ff3df066}
+@keyframes pop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+.box h3{color:var(--gold);font-size:26px;margin:6px 0}
+.box p{font-size:18px;line-height:1.6}
+.box p.from{font-size:clamp(18px,5.5vw,24px);font-weight:800;line-height:1.3;color:#10051f;background:linear-gradient(90deg,var(--gold),var(--pink),var(--cyan));border-radius:18px;padding:16px 10px;margin:14px 0 18px;box-shadow:0 0 26px #ffd54acc,0 0 50px #ff3df099;animation:pls 1.4s ease-in-out infinite alternate}
+.box p.from b{display:block;margin-top:4px;font-size:clamp(28px,9vw,40px);font-weight:900;color:#fff;text-shadow:0 2px 0 #4a0a6b,0 0 14px #ffffffaa}
+@keyframes pls{from{transform:scale(1)}to{transform:scale(1.05)}}
+#big{position:fixed;inset:0;z-index:80;display:none;background:rgba(2,4,14,.92);align-items:center;justify-content:center;text-align:center;flex-direction:column}
+#big.show{display:flex}
+#bigC{position:absolute;inset:0;width:100%;height:100%}
+#bigT{position:relative;z-index:2;padding:16px}
+#bigN{font-size:clamp(120px,45vw,320px);font-weight:900;color:var(--gold);text-shadow:0 0 50px #ff3df0;line-height:1;animation:pls .5s infinite alternate}
+#bigH{font-size:clamp(40px,13vw,110px);font-weight:900;line-height:1.05;background:linear-gradient(90deg,var(--gold),var(--pink),var(--cyan),var(--gold));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 3s linear infinite}
+#bigS{font-size:clamp(20px,6vw,34px);margin-top:14px;color:#fff;line-height:1.6}
+#bigX{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px;z-index:3;margin:0}
+#flash{position:fixed;inset:0;background:#fff;z-index:99;opacity:0;pointer-events:none;transition:opacity .08s}
+footer{text-align:center;color:var(--muted);padding:30px 16px 50px;line-height:1.7}
+.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--gold);color:#10051f;padding:10px 18px;border-radius:20px;font-weight:700;z-index:100;display:none;max-width:90%;text-align:center;white-space:pre-line;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="aur"></div><canvas id="bg"></canvas><div id="flash"></div>
+<nav><a href="#home">🏠 હોમ</a><a href="#count">⏳ કાઉન્ટડાઉન</a><a href="#letter">💌 દિલનો સંદેશ</a><a href="#crackers">🎆 આતશબાજી</a><a href="#sky">🎈 ફુગ્ગા</a><a href="#luck">🔮 ભવિષ્ય</a><a href="#wall">🎁 શુભેચ્છા</a></nav>
+<main>
+<section id="home" class="hero">
+ <span class="pill">નવું વર્ષ • નવી શરૂઆત</span>
+ <h1 class="mega">Happy<br>New Year</h1>
+ <p class="by">પ્રેમ સહ <b>મિરાજ ધંધુકિયા</b> તરફથી ✨</p>
+ <p class="sub" style="margin-top:18px">તમારું નામ લખો અને ખાસ તમારા માટેની શુભેચ્છા મેળવો 🎁</p>
+ <input type="text" id="name" placeholder="તમારું નામ લખો…" maxlength="30" autocomplete="off">
+ <div class="row"><button id="go">🥂 મારી શુભેચ્છા જુઓ</button></div>
+ <label style="color:var(--muted);font-size:14px"><input type="checkbox" id="torchOn" checked> 🔦 શુભેચ્છા સાથે ફ્લેશલાઇટ ઝબકે</label>
+</section>
+
+<section id="count">
+ <h2>⏳ રાત્રે ૧૨ વાગ્યા સુધી</h2>
+ <p class="sub" id="cdMsg">નવા વર્ષની ઘડીઓ ગણાઈ રહી છે…</p>
+ <div class="cd"><div><b id="h">00</b><span>કલાક</span></div><div><b id="m">00</b><span>મિનિટ</span></div><div><b id="s">00</b><span>સેકન્ડ</span></div></div>
+ <div class="bar"><i id="pb"></i></div>
+ <p class="sub" style="margin-top:12px;font-size:14px">બરાબર ૧૨ વાગ્યે આખી સ્ક્રીન પર ધમાકેદાર આતશબાજી થશે! સ્ક્રીન ચાલુ રાખજો 😍</p>
+ <div class="row"><button class="alt" id="trial">🎬 ૧૨ વાગ્યાનો નજારો હમણાં જુઓ</button></div>
+</section>
+
+<section id="letter">
+ <h2>💌 મિરાજનો દિલથી સંદેશ</h2>
+ <p class="sub">પરબીડિયું ખોલો અને વાંચો</p>
+ <div class="letter" id="lt">💌 નીચેનું બટન દબાવો…</div>
+ <div class="row"><button id="openL">💌 સંદેશ ખોલો</button></div>
+</section>
+
+<section id="crackers">
+ <h2>🎆 આતશબાજી ઝોન</h2>
+ <p class="sub">આકાશ પર આંગળી અડાડો!</p>
+ <canvas id="fx" class="fw"></canvas>
+ <div class="row"><button data-t="rocket">🚀 રોકેટ</button><button data-t="fount">⛲ ફુવારો</button><button data-t="bomb">💥 મહા ધડાકો</button><button data-t="show">🎇 ગ્રાન્ડ શો</button><button class="alt" id="snd">🔊 અવાજ ચાલુ</button></div>
+</section>
+
+<section id="sky">
+ <h2>🎈 ફુગ્ગા ફોડો</h2>
+ <p class="sub">દરેક ફુગ્ગામાં એક શુભેચ્છા છુપાયેલી છે!</p>
+ <div class="sky" id="skyBox"></div>
+ <p class="pops">ફોડેલા ફુગ્ગા: <span id="pc">0</span> 🎉</p>
+</section>
+
+<section id="luck">
+ <h2>🔮 તમારું 2027 કેવું રહેશે?</h2>
+ <p class="sub">એક બોલ દબાવો અને ભવિષ્ય જાણો</p>
+ <div class="balls" id="balls"></div>
+</section>
+
+<section id="wall">
+ <h2>🎁 સૌ માટે શુભેચ્છાઓ</h2>
+ <p class="sub">કોઈને પસંદ કરો અને વોટ્સએપ પર મોકલો</p>
+ <div class="tabs" id="tabs"></div>
+ <div class="wishes" id="list"></div>
+</section>
+</main>
+<footer>❤️ થી બનાવેલ — મિરાજ ધંધુકિયા<br>Happy New Year 2027 🎉</footer>
+
+<div id="modal"><div class="box">
+ <div style="font-size:56px">🥂</div>
+ <h3 id="mTitle"></h3>
+ <p id="mText"></p>
+ <p class="from">🎉 Happy New Year<br>શુભેચ્છા સહ<b>મિરાજ ધંધુકિયા</b> 🎉</p>
+ <button id="mShare">📲 વોટ્સએપ પર મોકલો</button>
+ <button class="alt" id="mClose">બંધ કરો</button>
+</div></div>
+
+<div id="big"><canvas id="bigC" class="fw"></canvas><button class="alt" id="bigX">✖ બંધ કરો</button><div id="bigT"><div id="bigN"></div><div id="bigH" style="display:none">Happy<br>New Year</div><div id="bigS"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const SIGN='મિરાજ ધંધુકિયા';
+const WISHES={
+ 'મિત્રો':["નવું વર્ષ તમારા જીવનમાં હાસ્ય, મસ્તી અને સફળતા લાવે! Happy New Year દોસ્ત! 🎉","વધુ એક વર્ષ, વધુ યાદો, વધુ ધમાલ! Happy New Year 2027! 🥂","તું છે એટલે જિંદગી મજાની છે. ખૂબ ખૂબ Happy New Year ભાઈ! 🎆"],
+ 'પરિવાર':["નવું વર્ષ આપણા ઘરમાં સુખ, શાંતિ અને તંદુરસ્તી લાવે. Happy New Year! 🙏","2027 આપણા પરિવારમાં પ્રેમ અને ખુશીઓ ભરી દે. નવા વર્ષની શુભકામનાઓ! 🏡","તમારા આશીર્વાદ સદા રહે. નૂતન વર્ષાભિનંદન! ✨"],
+ 'વ્યવસાય':["2027 તમારા ધંધામાં ખૂબ પ્રગતિ અને નફો લાવે! Happy New Year! 💰","નવું વર્ષ, નવા સોદા, નવી સિદ્ધિઓ. Happy New Year! 🚀","તમારી મહેનતને ચાર ચાંદ લાગે એવું વર્ષ રહે. શુભ નવું વર્ષ! 📈"],
+ 'ખાસ વ્યક્તિ':["તમારા વગર કોઈ વર્ષ પૂરું ન લાગે. Happy New Year મારા ખાસ માણસ! ❤️","2027 ની સૌથી સુંદર શરૂઆત તમે જ છો. Happy New Year! 🌹","આવનારા દરેક દિવસે તમારી સાથે રહેવું છે. નવા વર્ષની શુભેચ્છા! 😊"]
+};
+const SELF=["{n}, નવું વર્ષ તમારા જીવનમાં ખુશીઓ અને સફળતા લાવે! 🥂","Happy New Year {n}! 2027 માં તમારા બધા સપના સાકાર થાય! ✨","{n}, 2027 તમારું સૌથી શાનદાર વર્ષ બની રહે એવી શુભેચ્છા! 🚀","{n} ને સારા સ્વાસ્થ્ય, ખૂબ ધન અને અઢળક ખુશીઓની શુભેચ્છા! 🎆","{n}, નવા વર્ષમાં નવો ઉમંગ, નવો જોશ! આ વર્ષ યાદગાર બનાવી દેજો! 🔥"];
+const LUCK=[["💰","ધન","પૈસાનો વરસાદ થશે!"],["❤️","પ્રેમ","દિલની વાત સાચી પડશે"],["🚀","કારકિર્દી","મોટી પ્રગતિ મળશે"],["✈️","પ્રવાસ","સપનાની ટ્રીપ પાક્કી"],["💪","તંદુરસ્તી","શરીર એકદમ તંદુરસ્ત"],["🍀","નસીબ","નસીબ તમારી સાથે છે!"]];
+const BW=["તમને ખૂબ ખૂબ સુખ મળે! 😊","સફળતા તમારા કદમ ચૂમે! 🏆","ઘરમાં લક્ષ્મીજીનો વાસ રહે! 💰","હંમેશા હસતા રહો! 😄","ભગવાન સદા સાથ આપે! 🙏","બધા સપના પૂરા થાય! ✨","તંદુરસ્તી સદા સારી રહે! 💪","પ્રેમ ને પ્રેમ મળે! ❤️"];
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const pad=n=>String(n).padStart(2,'0');
+function toast(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',2600)}
+
+/* Stars */
+const bg=$('#bg'),bx=bg.getContext('2d');let S=[];
+function bsz(){bg.width=innerWidth;bg.height=innerHeight;S=Array.from({length:110},()=>({x:Math.random()*bg.width,y:Math.random()*bg.height,r:Math.random()*1.6+.3,p:Math.random()*6}))}
+bsz();addEventListener('resize',bsz);
+(function st(t){bx.clearRect(0,0,bg.width,bg.height);S.forEach(s=>{bx.globalAlpha=.4+.6*Math.abs(Math.sin(t/900+s.p));bx.fillStyle='#fff';bx.beginPath();bx.arc(s.x,s.y,s.r,0,6.28);bx.fill()});requestAnimationFrame(st)})(0);
+
+/* Sound */
+let sound=true,actx;
+function ac(){actx=actx||new (window.AudioContext||window.webkitAudioContext)();return actx}
+function boom(big){if(!sound)return;try{const a=ac(),d=a.sampleRate*(big?.6:.35),b=a.createBuffer(1,d,a.sampleRate),c=b.getChannelData(0);for(let i=0;i<d;i++)c[i]=(Math.random()*2-1)*Math.pow(1-i/d,3);const s=a.createBufferSource();s.buffer=b;const g=a.createGain();g.gain.value=big?.9:.5;s.connect(g).connect(a.destination);s.start()}catch(e){}}
+function beep(f,len){if(!sound)return;try{const a=ac(),o=a.createOscillator(),g=a.createGain();o.frequency.value=f;g.gain.value=.15;o.connect(g).connect(a.destination);o.start();o.stop(a.currentTime+len)}catch(e){}}
+$('#snd').onclick=e=>{sound=!sound;e.target.textContent=sound?'🔊 અવાજ ચાલુ':'🔇 અવાજ બંધ'};
+
+/* Fireworks factory */
+const COLS=[50,300,180,330,200,45,280];
+function FW(cv){const cx=cv.getContext('2d');let W,H,P=[];
+ const api={get W(){return W},get H(){return H}};
+ function size(){const r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0)}
+ api.size=size;
+ api.burst=(x,y,n=80,hue)=>{hue=hue??pick(COLS);for(let i=0;i<n;i++){const a=6.28*i/n,s=1+Math.random()*4.5;P.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,h:hue+Math.random()*30,g:.05})}boom()};
+ api.rocket=x=>P.push({r:1,x,y:H,vx:0,vy:-7,ty:H*.2+Math.random()*H*.3,l:1});
+ api.fount=x=>{let k=0;const t=setInterval(()=>{for(let i=0;i<8;i++)P.push({x,y:H-8,vx:(Math.random()-.5)*3,vy:-3-Math.random()*5,l:1,h:40+Math.random()*260,g:.1});if(++k>40)clearInterval(t)},40);boom()};
+ api.bomb=(x,y)=>{for(let i=0;i<160;i++){const a=Math.random()*6.28,s=Math.random()*8;P.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,h:Math.random()*360,g:.08})}boom(true);if(navigator.vibrate)navigator.vibrate(80)};
+ api.show=()=>{for(let i=0;i<10;i++)setTimeout(()=>{if(i%3==0)api.rocket(Math.random()*W);else api.burst(Math.random()*W,H*.15+Math.random()*H*.4,90)},i*350)};
+ (function loop(){if(W){cx.fillStyle='rgba(2,4,14,.22)';cx.fillRect(0,0,W,H);
+  for(let i=P.length-1;i>=0;i--){const p=P[i];p.x+=p.vx;p.y+=p.vy;
+   if(p.r){if(p.y<=p.ty){api.burst(p.x,p.y,90);P.splice(i,1);continue}cx.fillStyle='#ffe9a0';cx.fillRect(p.x,p.y,2,6);continue}
+   p.vy+=p.g;p.vx*=.985;p.l-=.014;if(p.l<=0){P.splice(i,1);continue}
+   cx.fillStyle=`hsla(${p.h},100%,62%,${p.l})`;cx.beginPath();cx.arc(p.x,p.y,2.2,0,6.28);cx.fill()}}
+  requestAnimationFrame(loop)})();
+ size();addEventListener('resize',size);return api}
+const f1=FW($('#fx')),f2=FW($('#bigC'));
+$('#fx').addEventListener('pointerdown',e=>{const r=e.target.getBoundingClientRect();f1.burst(e.clientX-r.left,e.clientY-r.top,80)});
+$('#bigC').addEventListener('pointerdown',e=>f2.burst(e.clientX,e.clientY,90));
+document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{const t=b.dataset.t;if(t=='rocket')f1.rocket(f1.W*(.2+Math.random()*.6));if(t=='fount')f1.fount(f1.W*(.2+Math.random()*.6));if(t=='bomb')f1.bomb(f1.W/2,f1.H/2);if(t=='show')f1.show()});
+
+/* Midnight countdown */
+const big=$('#big');let bigTimer=null,celebrated=false,lastDiff=1e12;
+function openBig(){big.classList.add('show');f2.size()}
+function closeBig(){big.classList.remove('show');clearInterval(bigTimer)}
+$('#bigX').onclick=closeBig;
+function celebrate(){
+ openBig();$('#bigN').style.display='none';$('#bigH').style.display='block';
+ $('#bigS').innerHTML='🎉 નવા વર્ષની ખૂબ ખૂબ શુભકામનાઓ! 🎉<br><b style="color:var(--gold)">'+SIGN+'</b> તરફથી ❤️';
+ boom(true);if(navigator.vibrate)navigator.vibrate([200,100,200,100,400]);flashlight();
+ f2.show();clearInterval(bigTimer);let k=0;bigTimer=setInterval(()=>{f2.burst(Math.random()*f2.W,Math.random()*f2.H*.6,100);if(k++%3==0)f2.rocket(Math.random()*f2.W);if(k%6==0)boom(true)},500);
+}
+function lastSecs(n){openBig();$('#bigH').style.display='none';$('#bigN').style.display='block';$('#bigN').textContent=n;$('#bigS').textContent='નવું વર્ષ બસ આવી ગયું… 🥳';beep(n==1?1000:600,.15)}
+function tick(){const now=new Date(),mid=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1),df=mid-now,sec=Math.ceil(df/1e3);
+ $('#h').textContent=pad(Math.floor(df/36e5));$('#m').textContent=pad(Math.floor(df/6e4%60));$('#s').textContent=pad(Math.floor(df/1e3%60));
+ $('#pb').style.width=(100-df/864e5*100)+'%';
+ if(sec<=10&&sec>=1&&!big.classList.contains('show')||sec<=10&&sec>=1&&$('#bigN').style.display!=='none')lastSecs(sec);
+ if(df>lastDiff+5e3||(lastDiff<1500&&df>5e4))celebrate();
+ $('#cdMsg').textContent=sec<=10?'🔥 બસ હવે '+sec+' સેકન્ડ!':'આજ રાતના ૧૨:૦૦ વાગ્યા સુધી બાકી સમય';
+ lastDiff=df}
+tick();setInterval(tick,1000);
+$('#trial').onclick=()=>{let n=5;lastSecs(n);const t=setInterval(()=>{n--;if(n>0)lastSecs(n);else{clearInterval(t);celebrate()}},1000)};
+
+/* Flashlight */
+const fl=$('#flash'),wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function flashlight(){
+ try{const s=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});const tr=s.getVideoTracks()[0];const caps=tr.getCapabilities?tr.getCapabilities():{};
+  if(caps.torch){for(let i=0;i<5;i++){await tr.applyConstraints({advanced:[{torch:true}]});await wait(180);await tr.applyConstraints({advanced:[{torch:false}]});await wait(180)}s.getTracks().forEach(t=>t.stop());return}
+  s.getTracks().forEach(t=>t.stop())}catch(e){}
+ for(let i=0;i<5;i++){fl.style.opacity=.9;if(navigator.vibrate)navigator.vibrate(120);await wait(120);fl.style.opacity=0;await wait(150)}
+}
+
+/* Personal wish */
+let lastText='';
+$('#go').onclick=()=>{
+ const n=$('#name').value.trim();
+ if(!n){toast('પહેલાં તમારું નામ લખો 🙂');$('#name').focus();return}
+ const nm=n.charAt(0).toUpperCase()+n.slice(1),w=pick(SELF).replace('{n}',nm);
+ $('#mTitle').textContent='Happy New Year, '+nm+'! 🎉';$('#mText').textContent=w;
+ lastText='Happy New Year 2027, '+nm+'! '+w+'\n\n🎉 Happy New Year — '+SIGN+' તરફથી 🎉';
+ $('#modal').classList.add('show');boom(true);if(navigator.vibrate)navigator.vibrate([100,50,100]);
+ if($('#torchOn').checked)flashlight();
+ setTimeout(()=>f1.show(),300);
+};
+$('#mClose').onclick=()=>$('#modal').classList.remove('show');
+$('#mShare').onclick=()=>share(lastText);
+function share(t){window.open('https://wa.me/?text='+encodeURIComponent(t+'\n\n🎆 તમારી શુભેચ્છા મેળવો: '+location.href.split('#')[0]),'_blank')}
+
+/* Letter */
+const LETTER="પ્રિય મિત્રો અને સ્નેહીજનો,\n\nજૂના વર્ષની બધી તકલીફો ભૂલીને નવા વર્ષમાં નવી આશા, નવો ઉત્સાહ અને નવા સપના લઈને આગળ વધીએ. તમે બધા મારા જીવનનો સૌથી કિંમતી ખજાનો છો.\n\nભગવાન તમને સારું સ્વાસ્થ્ય, અઢળક પ્રેમ અને ખૂબ સફળતા આપે. તમારા ચહેરા પર સદા સ્મિત રહે, એ જ મારી દિલથી પ્રાર્થના.\n\nHappy New Year! 🎉\n\n— તમારો પોતાનો,\n"+SIGN+" ❤️";
+let typing=false;
+$('#openL').onclick=()=>{if(typing)return;typing=true;const el=$('#lt');el.textContent='';let i=0;const t=setInterval(()=>{el.textContent+=LETTER[i++];if(i>=LETTER.length){clearInterval(t);typing=false;f1.burst(f1.W/2,f1.H/2,100);toast('💖 દિલથી શુભેચ્છા!')}},45)};
+
+/* Balloons */
+let pc=0;const sky=$('#skyBox'),BC=['🎈','🎈','🎈','🎈','🎊'];
+function spawn(){const b=document.createElement('div');b.className='bal';b.textContent='🎈';b.style.left=(Math.random()*85)+'%';b.style.animationDuration=(6+Math.random()*5)+'s';b.style.filter='hue-rotate('+Math.floor(Math.random()*360)+'deg) drop-shadow(0 0 10px #fff4)';
+ b.onpointerdown=()=>{b.remove();pc++;$('#pc').textContent=pc;toast(Math.random()<.25?'🏡 આવો ક્યારેક કાલાવડ 🙏':pick(BW));boom();if(navigator.vibrate)navigator.vibrate(40);if(pc%5==0)f1.burst(f1.W/2,f1.H/2,100)};
+ b.onanimationend=()=>b.remove();sky.appendChild(b)}
+for(let i=0;i<5;i++)setTimeout(spawn,i*500);setInterval(()=>{if(sky.children.length<9)spawn()},1000);
+
+/* Lucky balls */
+LUCK.forEach(([e,t,m])=>{const d=document.createElement('div');d.className='ball';d.innerHTML='<span class="e">🔮</span><b>?</b>';d.onclick=()=>{if(d.classList.contains('open'))return;d.classList.add('open');d.innerHTML='<span class="e">'+e+'</span><b>'+t+'</b><small>'+m+'</small>';f1.burst(f1.W/2,f1.H/2,60)};$('#balls').appendChild(d)});
+
+/* Wishes wall */
+const tabs=$('#tabs'),list=$('#list');
+function render(cat){
+ tabs.innerHTML='';Object.keys(WISHES).forEach(k=>{const b=document.createElement('button');b.textContent=k;if(k==cat)b.className='act';b.onclick=()=>render(k);tabs.appendChild(b)});
+ list.innerHTML='';WISHES[cat].forEach(t=>{const full=t+'\n\n🎉 Happy New Year — '+SIGN+' તરફથી 🎉';const d=document.createElement('div');d.className='wish';d.innerHTML='<span></span><i>— '+SIGN+' તરફથી</i><small><button>📲 વોટ્સએપ</button><button class="alt">📋 કૉપિ</button></small>';d.querySelector('span').textContent=t;const [a,c]=d.querySelectorAll('button');a.onclick=()=>share(full);c.onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(full).then(()=>toast('કૉપિ થઈ ગયું ✅'),()=>toast('કૉપિ ન થયું'))};list.appendChild(d)});
+}
+render('મિત્રો');
+setTimeout(()=>f1.burst(f1.W/2,f1.H/3,100),800);
+</script>
+</body>
+</html>
